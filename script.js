@@ -88,11 +88,78 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+numbers = numericCharacters;
+lowerCase = lowerCasedCharacters;
+upperCase = upperCasedCharacters;
+symbols = specialCharacters;
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-}
+  var passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
+  if (passwordLength < 10 || passwordLength > 64) {
+    alert("minimum character rquired is 10 and maximum 64");
+    return
+  }
+  if (isNaN (passwordLength)) {
+    alert("password length should be a number");
+    return passwordLength
+  }
 
+  var numbers = confirm ("Would you like to use numbers?") 
+  // if (numbers === true) {
+    // userInput = userInput.concat(numbers);
+  //   alert("You said YES to numbers")
+  // }
+  //  else {
+  //   alert("You said NO to numbers");
+  // }
+
+  var numbers = confirm ("Would you like to use numbers?") 
+  // if (numbers === true) {
+    // userInput = userInput.concat(numbers);
+  //   alert("You said YES to numbers")
+  // }
+  //  else {
+  //   alert("You said NO to numbers");
+  // }
+
+  var upperCase = confirm ("Would you like to use upper case?")
+  // if (upperCase === true) {
+    // userInput = userInput.concat(upperCase);
+  //   alert("You said YES to upper case")
+  // } 
+  // else {
+  //   alert("You said NO to upper case")
+  // }
+
+  var symbols = confirm ("Would you like to use symbols?")
+  // if (symbols === true) {
+    // userInput = userInput.concat(symbols);
+  //   alert("You said YES to symbols")
+  // } 
+  // else {
+  //   alert("You said NO to symbols")
+  // }
+
+  if (!numbers && !lowerCase && !upperCase && !symbols) {
+    alert("you must choose one character type for password to generate")
+    return
+  }
+  alert("Your Choices: \n uppercase = " + " "+(upperCase) + " \n lowercase = " + " "+(lowerCase) + " \n symbols = " + " "+(symbols) + "\n numbers = " + " "+(numbers) + "\n  Character Lenght = "+ " "+(passwordLength));
+ 
+  // Notes: all the alerts commented out above were too much, I was getting fed up
+  // can imagine the user, but I wanted user to know what their choices was hence 
+  //  alert on line 150.
+
+  // below commented out section is me playing where argument goes withouth getting console error.
+  // if  (getPasswordOptions = numbers, lowerCase, upperCase, symbols, length) {
+    // userInput = [[userInput].concat(numbers)(lowerCase)(upperCase)(symbols)];
+  
+    // }
+}
+// console.log (userInput);
 // Function for getting a random element from an array
 function getRandom(arr) {
 
