@@ -116,8 +116,8 @@ function getPasswordOptions() {
   //   alert("You said NO to numbers");
   // }
 
-  var numbers = confirm ("Would you like to use numbers?") 
-  // if (numbers === true) {
+  var lowerCase = confirm ("Would you like to use lower case?") 
+  // if (lowerCase === true) {
     // userInput = userInput.concat(numbers);
   //   alert("You said YES to numbers")
   // }
