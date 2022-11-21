@@ -88,16 +88,21 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var totalCharacters = [(specialCharacters), (numericCharacters), (lowerCasedCharacters),(upperCasedCharacters)];
+// console.log(totalCharacters)
+userInput = []
 numbers = numericCharacters;
 lowerCase = lowerCasedCharacters;
 upperCase = upperCasedCharacters;
 symbols = specialCharacters;
+passwordLength = 0;
+
 
 
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  var passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
+var passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
   if (passwordLength < 10 || passwordLength > 64) {
     alert("minimum character rquired is 10 and maximum 64");
     return
@@ -107,7 +112,7 @@ function getPasswordOptions() {
     return passwordLength
   }
 
-  var numbers = confirm ("Would you like to use numbers?") 
+var numbers = confirm ("Would you like to use numbers?") 
   // if (numbers === true) {
     // userInput = userInput.concat(numbers);
   //   alert("You said YES to numbers")
@@ -116,8 +121,9 @@ function getPasswordOptions() {
   //   alert("You said NO to numbers");
   // }
 
-  var lowerCase = confirm ("Would you like to use lower case?") 
-  // if (lowerCase === true) {
+// prompt("Would you like to use lowercase?")
+var lowerCase = confirm ("Would you like to use numbers?") 
+  // if (numbers === true) {
     // userInput = userInput.concat(numbers);
   //   alert("You said YES to numbers")
   // }
@@ -125,7 +131,8 @@ function getPasswordOptions() {
   //   alert("You said NO to numbers");
   // }
 
-  var upperCase = confirm ("Would you like to use upper case?")
+// prompt("Would you like to use upper case?")
+var upperCase = confirm ("Would you like to use upper case?")
   // if (upperCase === true) {
     // userInput = userInput.concat(upperCase);
   //   alert("You said YES to upper case")
@@ -133,8 +140,8 @@ function getPasswordOptions() {
   // else {
   //   alert("You said NO to upper case")
   // }
-
-  var symbols = confirm ("Would you like to use symbols?")
+// prompt("Would you like to use symbols?")
+var symbols = confirm ("Would you like to use symbols?")
   // if (symbols === true) {
     // userInput = userInput.concat(symbols);
   //   alert("You said YES to symbols")
@@ -142,29 +149,21 @@ function getPasswordOptions() {
   // else {
   //   alert("You said NO to symbols")
   // }
-
   if (!numbers && !lowerCase && !upperCase && !symbols) {
     alert("you must choose one character type for password to generate")
     return
   }
   alert("Your Choices: \n uppercase = " + " "+(upperCase) + " \n lowercase = " + " "+(lowerCase) + " \n symbols = " + " "+(symbols) + "\n numbers = " + " "+(numbers) + "\n  Character Lenght = "+ " "+(passwordLength));
- 
-  // Notes: all the alerts commented out above were too much, I was getting fed up
-  // can imagine the user, but I wanted user to know what their choices was hence 
-  //  alert on line 150.
-
-  // below commented out section is me playing where argument goes withouth getting console error.
   // if  (getPasswordOptions = numbers, lowerCase, upperCase, symbols, length) {
     // userInput = [[userInput].concat(numbers)(lowerCase)(upperCase)(symbols)];
   
     // }
 }
-// console.log (userInput);
+console.log (userInput);
 // Function for getting a random element from an array
 // reference: https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
 function getRandom(arr) {
 return (arr)[Math.floor(Math.random(arr) * (arr.length))];
-
 // [Math.floor(Math.random(numbers) * numericCharacters.lenght)];
 // [Math.floor(Math.random(loerCase) * lowerCasedCharacters.lenght)];
 // [Math.floor(Math.random(upperCase) * upperCasedCharacters.lenght)];
@@ -173,20 +172,22 @@ return (arr)[Math.floor(Math.random(arr) * (arr.length))];
 // and we just start with Math.floor, then no letters are produced but 
 // just the position of that letter in the array. 
 //  Just Math.random produces numbers with decimal, Math.floor is used to round it.
-
 }
 // console.log(getRandom(numbers))
 // console.log(getRandom(upperCase));
 // console.log(getRandom(lowerCase));
 // console.log(getRandom(symbols));
 
-
-
 // Function to generate password with user input
 function generatePassword() {
-
+ getPasswordOptions()
+  if  (getPasswordOptions = numbers, lowerCase, upperCase, symbols, passwordLenght) {
+  userInput = [[userInput].concat(numbers)(lowerCase)(upperCase)(symbols)];
+  };
+  for (var i = 0; i < passwordLength; i++);
+ return (generatePassword (getRandom(userInput)));
 }
-
+console.log(getRandom(userInput))
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
