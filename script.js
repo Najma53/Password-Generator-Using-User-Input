@@ -161,7 +161,18 @@ function getPasswordOptions() {
 }
 // console.log (userInput);
 // Function for getting a random element from an array
+// reference: https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
 function getRandom(arr) {
+return (arr)[Math.floor(Math.random(arr) * (arr.length))];
+
+// [Math.floor(Math.random(numbers) * numericCharacters.lenght)];
+// [Math.floor(Math.random(loerCase) * lowerCasedCharacters.lenght)];
+// [Math.floor(Math.random(upperCase) * upperCasedCharacters.lenght)];
+// [Math.floor(Math.random(symbols) * specialCharacters.lenght)];
+// Notes to myself: If in return command, the first (arr) is not writen
+// and we just start with Math.floor, then no letters are produced but 
+// just the position of that letter in the array. 
+//  Just Math.random produces numbers with decimal, Math.floor is used to round it.
 
 }
 
