@@ -175,6 +175,12 @@ return (arr)[Math.floor(Math.random(arr) * (arr.length))];
 //  Just Math.random produces numbers with decimal, Math.floor is used to round it.
 
 }
+// console.log(getRandom(numbers))
+// console.log(getRandom(upperCase));
+// console.log(getRandom(lowerCase));
+// console.log(getRandom(symbols));
+
+
 
 // Function to generate password with user input
 function generatePassword() {
