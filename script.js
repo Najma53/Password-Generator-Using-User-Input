@@ -114,11 +114,13 @@ function getPasswordOptions() {
       alert("password length should be a number");
       return passwordLength
     }
+    console.log (passwordLength)  // Working
 var numbers = confirm ("Would you like to use numbers?")
   if (numbers === true) {
-    hasnumbers = numbers;
+    hasnumbers = numbers; 
     // userInput = userInput.concat(numericCharacters);
   }
+  console.log(numbers) //working
   // if (numbers === false) {
       // userInput = userInput;
   // }
@@ -129,6 +131,7 @@ var lowerCase = confirm ("Would you like to use lower case?")
     haslowerCase = lowerCase;
     // userInput = userInput.concat(lowerCasedCharacters);
   }
+  console.log(lowerCase) //working
   // if  (lowerCase === false) {
     // userInput = userInput;
   // }
@@ -139,7 +142,7 @@ var upperCase = confirm ("Would you like to use upper case?")
     hasupperCase = upperCase;
     // userInput = userInput.concat(upperCasedCharacters);
   }
-  console.log (upperCase)
+  console.log (upperCase)    //Working
   // if (upperCase === false) {
     // userInput = userInput;
   // } 
@@ -150,6 +153,7 @@ var symbols = confirm ("Would you like to use symbols?")
     hassymbols = symbols;
     // userInput = userInput.concat(specialCharacters);
   }
+  console.log(symbols) //working
   // if (symbols === false) {
     // userInput = userInput;
 // }
