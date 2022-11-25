@@ -88,8 +88,56 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// Introducing variables to put user input data
+
+var totalCharacters = "";
+
+passwordLength = 0;
+
  // Function to prompt user for password options
 function getPasswordOptions() {
+
+  var passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
+
+  if (passwordLength < 10 || passwordLength > 64) {
+     alert("minimum character rquired is 10 and maximum 64");
+     return
+   }
+   if (isNaN (passwordLength)) {
+     alert("password length should be a number");
+     return passwordLength
+   }
+
+// prompt("Would you like to use numbers")
+   var numbers = confirm ("Would you like to use numbers?") 
+   if (numbers === true) {
+     totalCharacters += numericCharacters
+   };
+ 
+ // prompt("Would you like to use lowercase?")
+ var lowerCase = confirm ("Would you like to use lower case?") 
+   if (lowerCase === true) {
+     totalCharacters += lowerCasedCharacters
+   };
+
+ // prompt("Would you like to use upper case?")
+ var upperCase = confirm ("Would you like to use upper case?")
+   if (upperCase === true) {
+     totalCharacters += upperCasedCharacters
+   };
+ 
+ // prompt("Would you like to use symbols?")
+ var symbols = confirm ("Would you like to use symbols?")
+   if (symbols === true) {
+     totalCharacters += specialCharacters
+   };
+
+   console.log(totalCharacters) //working till here.
+  if (!numbers && !lowerCase && !upperCase && !symbols) {
+    alert("you must choose one character type for password to generate")
+    return
+  }
+  alert("Your Choices: \n uppercase = " + " "+(upperCase) + " \n lowercase = " + " "+(lowerCase) + " \n symbols = " + " "+(symbols) + "\n numbers = " + " "+(numbers) + "\n Character Length = "+ " "+(passwordLength));
 
 }
 
