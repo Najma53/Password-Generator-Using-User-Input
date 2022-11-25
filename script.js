@@ -93,6 +93,7 @@ var upperCasedCharacters = [
 var totalCharacters = "";
 
 passwordLength = 0;
+password1 = "";
 
  // Function to prompt user for password options
 function getPasswordOptions() {
@@ -153,19 +154,24 @@ return (arr)[Math.floor(Math.random(arr) * (arr.length))];
 // just the position of that letter in the array. 
 //  Just Math.random produces numbers with decimal, Math.floor is used to round it.
 
-console.log(getRandom(numericCharacters)) //working
-console.log(getRandom(upperCasedCharacters)); //working
-console.log(getRandom(lowerCasedCharacters));  //working
-console.log(getRandom(specialCharacters)); //working
+// console.log(getRandom(numericCharacters)) //working
+// console.log(getRandom(upperCasedCharacters)); //working
+// console.log(getRandom(lowerCasedCharacters));  //working
+// console.log(getRandom(specialCharacters)); //working
 
 // Function to generate password with user input
 function generatePassword() {
  getPasswordOptions()
  
-
+ var password1 = " "; // variable created to input password based on user input
+ for (var i = 0; i < passwordLength; i++){
+   password1 += totalCharacters[Math.floor(Math.random(totalCharacters) * (totalCharacters.length))];
+ }
+ return password1
 
 }
-
+// console.log(password1) //Nothing in output
+// console.log(generatePassword)  //checking to see if anything is produce in console - full code is coming up
 
 
 // Get references to the #generate element
