@@ -109,6 +109,11 @@ function getPasswordOptions() {
      return passwordLength
    }
 
+  // if (passwordLength >=10  || passwordLength >= 64) {
+  //  passwordLength = totalCharacters.length
+  // };  
+
+
 // prompt("Would you like to use numbers")
    var numbers = confirm ("Would you like to use numbers?") 
    if (numbers === true) {
@@ -194,5 +199,8 @@ generateBtn.addEventListener('click', writePassword);
 
 //NOTES
 // MY ERROR  is  TO DO WITH PASSWORD LENGTH!!!!!!!!
-//how? Went back to getRandom(totalCharacters and console log it.)
+//how? Went back to getRandom(totalCharacters and console log it.) Line 161 coming as undefined!!!
 //For getRandom(totalCharacters) not to Work, something is wrong with password length
+// Adding new if statement in getPasswordOptions
+//Line 112 to 114. The if statement, if i remove the comment out, the alert 
+//on line 146 shows 0 for character length.
