@@ -167,7 +167,8 @@ function generatePassword() {
  for (var i = 0; i < passwordLength; i++){
    password1 += totalCharacters[Math.floor(Math.random(totalCharacters) * (totalCharacters.length))];
  }
- return password1
+//  return password1
+ return generatePassword
 
 }
 // console.log(password1) //Nothing in output
@@ -180,7 +181,7 @@ var generateBtn = document.querySelector('#generate');
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.getElementById('password');
+  var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 }
