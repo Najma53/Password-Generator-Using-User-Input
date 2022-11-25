@@ -153,10 +153,10 @@ return (arr)[Math.floor(Math.random(arr) * (arr.length))];
 // just the position of that letter in the array. 
 //  Just Math.random produces numbers with decimal, Math.floor is used to round it.
 
-// console.log(getRandom(numbers));
-// console.log(getRandom(upperCase));
-// console.log(getRandom(lowerCase));
-// console.log(getRandom(symbols));
+console.log(getRandom(numericCharacters)) //working
+console.log(getRandom(upperCasedCharacters)); //working
+console.log(getRandom(lowerCasedCharacters));  //working
+console.log(getRandom(specialCharacters)); //working
 
 // Function to generate password with user input
 function generatePassword() {
