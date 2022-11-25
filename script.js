@@ -158,6 +158,8 @@ return (arr)[Math.floor(Math.random(arr) * (arr.length))];
 // console.log(getRandom(upperCasedCharacters)); //working
 // console.log(getRandom(lowerCasedCharacters));  //working
 // console.log(getRandom(specialCharacters)); //working
+console.log(getRandom(totalCharacters)) //NOT WORKING
+
 
 // Function to generate password with user input
 function generatePassword() {
@@ -188,3 +190,9 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
+//NOTES
+// MY ERROR  is  TO DO WITH PASSWORD LENGTH!!!!!!!!
+//how? Went back to getRandom(totalCharacters and console log it.)
+//For getRandom(totalCharacters) not to Work, something is wrong with password length
