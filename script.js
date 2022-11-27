@@ -90,8 +90,8 @@ var upperCasedCharacters = [
 
 // Introducing variables to put user input data
 
-var totalCharacters = "";
-
+// var totalCharacters = "";
+var totalCharacters = [];
 var passwordLength = 0;
 password1 = password
 
@@ -117,28 +117,32 @@ function getPasswordOptions() {
 // prompt("Would you like to use numbers")
    var numbers = confirm ("Would you like to use numbers?") 
    if (numbers === true) {
-    totalCharacters += numbers
-    // totalCharacters += numericCharacters
-   };
+    // totalCharacters += numbers  //Shortens the length  due to numbers being bolean value
+    // totalCharacters += numericCharacters //doubling the total character length.
+    totalCharacters.push(...numericCharacters);
+  };
 console.log("Numeric Character Length =" + " " +(numericCharacters.length))
 console.log("Total Characters Length =" + " " +(totalCharacters.length))
 
  // prompt("Would you like to use lowercase?")
  var lowerCase = confirm ("Would you like to use lower case?") 
    if (lowerCase === true) {
-     totalCharacters += lowerCasedCharacters
-   };
+    //  totalCharacters += lowerCasedCharacters //doubling the total charecter length
+    totalCharacters.push(...lowerCasedCharacters);
+  };
 
  // prompt("Would you like to use upper case?")
  var upperCase = confirm ("Would you like to use upper case?")
    if (upperCase === true) {
-     totalCharacters += upperCasedCharacters
+    //  totalCharacters += upperCasedCharacters // doubling total charecter length
+    totalCharacters.push(...upperCasedCharacters);
    };
  
  // prompt("Would you like to use symbols?")
  var symbols = confirm ("Would you like to use symbols?")
    if (symbols === true) {
-     totalCharacters += specialCharacters
+    //  totalCharacters += specialCharacters //doubling total charecter length
+    totalCharacters.push(...specialCharacters);
    };
 
    console.log("Total Character = " +"" + totalCharacters) //working till here.
@@ -153,7 +157,7 @@ console.log("Total Characters Length =" + " " +(totalCharacters.length))
 // Function for getting a random element from an array
 // reference: https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
 function getRandom(arr) {
-return (arr)[Math.floor(Math.random(arr) * (arr.length))];
+return (arr)[Math.floor(Math.random() * (arr.length))];
 }
  
 
