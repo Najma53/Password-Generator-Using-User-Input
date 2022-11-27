@@ -90,7 +90,7 @@ var upperCasedCharacters = [
 
 // Introducing variables to put user input data
 
-// var totalCharacters = "";
+// var totalCharacters = ""; 
 var totalCharacters = [];
 var passwordLength = 0;
 password1 = password
@@ -121,8 +121,8 @@ function getPasswordOptions() {
     // totalCharacters += numericCharacters //doubling the total character length.
     totalCharacters.push(...numericCharacters);
   };
-console.log("Numeric Character Length =" + " " +(numericCharacters.length))
-console.log("Total Characters Length =" + " " +(totalCharacters.length))
+// console.log("Numeric Character Length =" + " " +(numericCharacters.length))
+// console.log("Total Characters Length =" + " " +(totalCharacters.length))
 
  // prompt("Would you like to use lowercase?")
  var lowerCase = confirm ("Would you like to use lower case?") 
@@ -145,7 +145,7 @@ console.log("Total Characters Length =" + " " +(totalCharacters.length))
     totalCharacters.push(...specialCharacters);
    };
 
-   console.log("Total Character = " +"" + totalCharacters) //working till here.
+  //  console.log("Total Character = " +"" + totalCharacters) //working till here.
   if (!numbers && !lowerCase && !upperCase && !symbols) {
     alert("you must choose one character type for password to generate")
     return
@@ -170,22 +170,25 @@ return (arr)[Math.floor(Math.random() * (arr.length))];
 // console.log(getRandom(upperCasedCharacters)); //working
 // console.log(getRandom(lowerCasedCharacters));  //working
 // console.log(getRandom(specialCharacters)); //working
-console.log(getRandom(totalCharacters)) //NOT WORKING
-
 
 // Function to generate password with user input
 function generatePassword() {
  getPasswordOptions()
+// Console logging all the variable using before to see if any link is broken
+ console.log(totalCharacters)
+ console.log(passwordLength)
+ console.log(totalCharacters.length)
  
  var password1 = " "; // variable created to input password based on user input
  for (var i = 0; i < passwordLength; i++){
-   password1 += totalCharacters[Math.floor(Math.random(totalCharacters) * (totalCharacters.length))];
+   password1 += totalCharacters[Math.floor(Math.random() * (totalCharacters.length))];
  }
-//  return password1
- return generatePassword
+ console.log(password1)
+ return password1
+
 
 }
-// console.log(password1) //Nothing in output
+console.log(password1) //Working
 // console.log(generatePassword)  //checking to see if anything is produce in console - full code is coming up
 
 
