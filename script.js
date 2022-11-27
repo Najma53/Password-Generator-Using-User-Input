@@ -92,13 +92,13 @@ var upperCasedCharacters = [
 
 var totalCharacters = "";
 
-passwordLength = 0;
-password1 = "";
+var passwordLength = 0;
+password1 = password
 
  // Function to prompt user for password options
 function getPasswordOptions() {
 
-  var passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
+  passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
 
   if (passwordLength < 10 || passwordLength > 64) {
      alert("minimum character rquired is 10 and maximum 64");
@@ -117,9 +117,12 @@ function getPasswordOptions() {
 // prompt("Would you like to use numbers")
    var numbers = confirm ("Would you like to use numbers?") 
    if (numbers === true) {
-     totalCharacters += numericCharacters
+    totalCharacters += numbers
+    // totalCharacters += numericCharacters
    };
- 
+console.log("Numeric Character Length =" + " " +(numericCharacters.length))
+console.log("Total Characters Length =" + " " +(totalCharacters.length))
+
  // prompt("Would you like to use lowercase?")
  var lowerCase = confirm ("Would you like to use lower case?") 
    if (lowerCase === true) {
@@ -138,7 +141,7 @@ function getPasswordOptions() {
      totalCharacters += specialCharacters
    };
 
-   console.log(totalCharacters) //working till here.
+   console.log("Total Character = " +"" + totalCharacters) //working till here.
   if (!numbers && !lowerCase && !upperCase && !symbols) {
     alert("you must choose one character type for password to generate")
     return
@@ -199,8 +202,13 @@ generateBtn.addEventListener('click', writePassword);
 
 //NOTES
 // MY ERROR  is  TO DO WITH PASSWORD LENGTH!!!!!!!!
-//how? Went back to getRandom(totalCharacters and console log it.) Line 161 coming as undefined!!!
-//For getRandom(totalCharacters) not to Work, something is wrong with password length
+//how do I know? Went back to getRandom(totalCharacters) and console log it. Line 161 coming as undefined!!!
+//For getRandom(totalCharacters) not to Work, something is wrong with password length, its not being taken into account
+//as user input but we can surely see its in the alert on line 146.
 // Adding new if statement in getPasswordOptions
 //Line 112 to 114. The if statement, if i remove the comment out, the alert 
 //on line 146 shows 0 for character length.
+
+
+//what can I do to fix it? At this point I can only think of unlinking from getPassword option and 
+//make password length its own function and put all criteria in there, if this step doesnt work, am not sure what to do.
