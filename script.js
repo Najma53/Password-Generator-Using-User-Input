@@ -208,14 +208,9 @@ generateBtn.addEventListener('click', writePassword);
 
 
 //NOTES
-// MY ERROR  is  TO DO WITH PASSWORD LENGTH!!!!!!!!
-//how do I know? Went back to getRandom(totalCharacters) and console log it. Line 161 coming as undefined!!!
-//For getRandom(totalCharacters) not to Work, something is wrong with password length, its not being taken into account
-//as user input but we can surely see its in the alert on line 146.
-// Adding new if statement in getPasswordOptions
-//Line 112 to 114. The if statement, if i remove the comment out, the alert 
-//on line 146 shows 0 for character length.
-
-
-//what can I do to fix it? At this point I can only think of unlinking from getPassword option and 
-//make password length its own function and put all criteria in there, if this step doesnt work, am not sure what to do.
+// MY ERROR  WAS TO DO WITH PASSWORD LENGTH!!!!!!!!
+//  after moving to global scope, started seeing length out put in console when used in generate password fubction.
+//  In total character [] if I put 0 as my initial value , it was picking up as 1. Hence left it empty.
+// Total character += user options was doubling character lenght by picking up the commas in array of 
+// user imput i.e numeric, lowerCasedCharecters, upperCasedCharecters and Symbols. Not sure why because
+// I changed the total charecter intial value from just string to an array. Didnt go exploring further.
