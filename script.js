@@ -97,7 +97,7 @@ password1 = password
 
  // Function to prompt user for password options
 function getPasswordOptions() {
-
+  totalCharacters = []; //added here to refresh the page automatically. Otherwise was retaining previous total charecter length.
   passwordLength = +prompt ("Please choose your password length.\nPassword length should be between 10 and 64 character")
 
   if (passwordLength < 10 || passwordLength > 64) {
@@ -106,7 +106,7 @@ function getPasswordOptions() {
    }
    if (isNaN (passwordLength)) {
      alert("password length should be a number");
-     return passwordLength
+     return 
    }
 
   // if (passwordLength >=10  || passwordLength >= 64) {
