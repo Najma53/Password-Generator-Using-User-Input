@@ -3,7 +3,7 @@ As a bootcamp student, we are required to build a Password Generaror using user 
 
 # Description
 
-THese are the criteria given to us 
+These are the criteria given to us 
 * Generate a password when the button is clicked
   * Present a series of prompts for password criteria
     * Length of password
