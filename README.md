@@ -17,8 +17,8 @@ THese are the criteria given to us
   * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
 
   # Getting Started
-
-  Step 1
+ 
+Step 1
 
 I created a new repository on my GitHub account and clone it to my computer using git clone command.
 
@@ -33,7 +33,7 @@ This led to my webpage viral https://najma53.github.io/Password-Generator-Using-
 
 Step 2
 
-First you need to pseudocoding. That is understand the problem in the language you are comfortable with i.e for me its English. Then slice the whole problem to bits and start witing the code in your language. Most of the pseudocoding was done for us and whatever wasn't its inside the script.js
+First you need to pseudocoding. That is understand the problem in the language you are comfortable with (for me it is English). Then slice the whole problem to bits and start witing the code in your language. Most of the pseudocoding was done for us and whatever wasn't its inside the script.js
 
 Step 3
 
@@ -43,26 +43,26 @@ Then open index.html file in browser, use your inspect tools and look in the con
 Step 4
 
 Debugging the code, meaning fixing the errors until no error pops up in the console. Most of my debugging notes are in the script.js by comenting out. This is what I discovered :
-* my total character lenght was doubling (if only one user input choice was taken) but if all then it became complex), not matching user input.
-* my initial variable to collect user imput was string, was collecting commas in arrays of user input variables as choices hence my total character lenght was increasing. I changed to an array
+* my total character length was doubling (if only one user input choice was taken) but if all then it became complex), not matching user input.
+* my initial variable to collect user imput was string, was collecting commas in arrays of user input variables as choices hence my total character length was increasing. I changed to an array
 *   When you console log based on this argument as shown below  
     numbers = numericCharacters;
     lowerCase = lowerCasedCharacters;
     upperCase = upperCasedCharacters;
     symbols = specialCharacters;
-such as console.log(numbers); console.log(lowercase);console.log(uppercase);console.log(symbols) the out put was different. I got bolean value  of true and false hence once again I had to go change my code.It was affecting my character length as well.
+such as console.log(numbers); console.log(lowercase);console.log(uppercase);console.log(symbols) the out put was different. I got bolean value of true and false hence once again I had to go change my code.It was affecting my character length as well.
 
 Below images showing my output  in console when initial out out lenght was chosen as 10. It will not match the script line currently as I have added and removed few lines of codes. This is just an example of what I got. The console didn't flag as red because my output was correct but it was still incorrect because that was affecting user input lenght of password.
 
-Image showing bolean value, hence affecting total character length. [demo](./images/bolean%20value.png)
+Image showing bolean value, hence affecting total character length. Please look at console section.[demo](./images/bolean%20value.png)
 
 
-Image showing character lenght being doubled while user inut lenght is different. [demo](./images/Console.png)
+Image showing character lenght being doubled while user inut lenght is different. Please look at the console section. [demo](./images/Console.png)
 
 
 * my initial variable  (i.e total character variable) if initial value of 0 was given, it was counting as 1 in out put hence gave an empty value.
 * my password length variable was inside the local scope of getPasswordOption hence outside this fuction when I needed it later (in getPasswordOption) was not being picked up. After moving to global, it was being picked up.
-* after fixing the above bugs, still found these ones as demonstrated in bugs.pdf file [demo](./images/bugs.png). To change this needed a new "if statement " just before the password function started.
+* after fixing the above bugs, still found these ones as demonstrated in bugs.png file [demo](./images/bugs.png). To change this needed a new "if statement " just before the password function started.
 
 # Conclusion
 
