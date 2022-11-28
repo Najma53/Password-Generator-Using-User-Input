@@ -90,10 +90,14 @@ var upperCasedCharacters = [
 
 // Introducing variables to put user input data
 
-// var totalCharacters = ""; 
+numbers = numericCharacters;
+lowerCase = lowerCasedCharacters;
+upperCase = upperCasedCharacters;
+symbols = specialCharacters;
+// var totalCharacters = "";  //picking up commas when adding user input choices hence changed to array below.
 var totalCharacters = [];
 var passwordLength = 0;
-password1 = password
+// password1 = password;
 
  // Function to prompt user for password options
 function getPasswordOptions() {
@@ -102,11 +106,11 @@ function getPasswordOptions() {
 
   if (passwordLength < 10 || passwordLength > 64) {
      alert("minimum character rquired is 10 and maximum 64");
-     return
+     return false
    }
    if (isNaN (passwordLength)) {
      alert("password length should be a number");
-     return 
+     return  false
    }
 
   // if (passwordLength >=10  || passwordLength >= 64) {
@@ -119,7 +123,7 @@ function getPasswordOptions() {
    if (numbers === true) {
     // totalCharacters += numbers  //Shortens the length  due to numbers being bolean value
     // totalCharacters += numericCharacters //doubling the total character length.
-    totalCharacters.push(...numericCharacters);
+    totalCharacters.push(...numericCharacters); //https://dmitripavlutin.com/javascript-merge-arrays/
   };
 // console.log("Numeric Character Length =" + " " +(numericCharacters.length))
 // console.log("Total Characters Length =" + " " +(totalCharacters.length))
@@ -128,30 +132,30 @@ function getPasswordOptions() {
  var lowerCase = confirm ("Would you like to use lower case?") 
    if (lowerCase === true) {
     //  totalCharacters += lowerCasedCharacters //doubling the total charecter length
-    totalCharacters.push(...lowerCasedCharacters);
+    totalCharacters.push(...lowerCasedCharacters); //https://dmitripavlutin.com/javascript-merge-arrays/
   };
 
  // prompt("Would you like to use upper case?")
  var upperCase = confirm ("Would you like to use upper case?")
    if (upperCase === true) {
     //  totalCharacters += upperCasedCharacters // doubling total charecter length
-    totalCharacters.push(...upperCasedCharacters);
+    totalCharacters.push(...upperCasedCharacters); //https://dmitripavlutin.com/javascript-merge-arrays/
    };
  
  // prompt("Would you like to use symbols?")
  var symbols = confirm ("Would you like to use symbols?")
    if (symbols === true) {
     //  totalCharacters += specialCharacters //doubling total charecter length
-    totalCharacters.push(...specialCharacters);
+    totalCharacters.push(...specialCharacters); //https://dmitripavlutin.com/javascript-merge-arrays/
    };
 
   //  console.log("Total Character = " +"" + totalCharacters) //working till here.
   if (!numbers && !lowerCase && !upperCase && !symbols) {
     alert("you must choose one character type for password to generate")
-    return
+    return false
   }
   alert("Your Choices: \n uppercase = " + " "+(upperCase) + " \n lowercase = " + " "+(lowerCase) + " \n symbols = " + " "+(symbols) + "\n numbers = " + " "+(numbers) + "\n Character Length = "+ " "+(passwordLength));
-
+  return true
 }
 
 // Function for getting a random element from an array
@@ -172,14 +176,19 @@ return (arr)[Math.floor(Math.random() * (arr.length))];
 // console.log(getRandom(specialCharacters)); //working
 
 // Function to generate password with user input
+
 function generatePassword() {
- getPasswordOptions()
+ var password1 = ""
+ //if statement addedhere so if "for loop" is run we dont get undefined value in password window, to fix my last 3 bugs)
+ if (getPasswordOptions() === false){ 
+return password1
+ }
 // Console logging all the variable using before to see if any link is broken
- console.log(totalCharacters)
- console.log(passwordLength)
- console.log(totalCharacters.length)
+//  console.log(totalCharacters)
+//  console.log(passwordLength)
+//  console.log(totalCharacters.length)
  
- var password1 = " "; // variable created to input password based on user input
+//  var password1 = " "; // variable created to input password based on user input
  for (var i = 0; i < passwordLength; i++){
    password1 += totalCharacters[Math.floor(Math.random() * (totalCharacters.length))];
  }
@@ -188,7 +197,7 @@ function generatePassword() {
 
 
 }
-console.log(password1) //Working
+// console.log(password1) //Working
 // console.log(generatePassword)  //checking to see if anything is produce in console - full code is coming up
 
 
@@ -214,3 +223,4 @@ generateBtn.addEventListener('click', writePassword);
 // Total character += user options was doubling character lenght by picking up the commas in array of 
 // user imput i.e numeric, lowerCasedCharecters, upperCasedCharecters and Symbols. Not sure why because
 // I changed the total charecter intial value from just string to an array. Didnt go exploring further.
+// + infront of prompt changes string to numeric. Saw on u tube and thought thats neat than typing parseInt().
